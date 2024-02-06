@@ -28,37 +28,56 @@
                 <td id="chapter_verse_count"></td>
             </tr>  
             <tr>
-                <th colspan="2" id="chapter_summary_hindi"></th>
+                <td colspan="2" id="chapter_summary_hindi" class="text-justified"></td>
             </tr>          
         </table>
     </div>
 
     <div class="right-container container-fluid border col-sm-8 col-12">
-        <div class="container-fluid">
-            <select name="verse" id="verse_dropdown" class="px-4">
+        <div class="container-fluid d-flex w-100 justify-content-end">
+            <em>Select Verse: </em><select name="verse" id="verse_dropdown" class="px-4 mx-2 border" title="Select verse">
                 
             </select>
         </div>
-        <p class="text-center fw-bold" id="chapter_verse_title"></p>
-        <div class="container-fluid text-center" id="chapter_verse_quote">
+        <u><p class="text-center fw-bold" id="chapter_verse_title"></p></u>
+        <div class="container-fluid text-center fw-bold" id="chapter_verse_quote">
 
         </div>
         <div class="container-fluid text-justified m-4">[ <span id="chapter_verse_english_pro"> </span> ]</div>
-        <div class="container-fluid" >
+        <div class="container-fluid chapter_des" >
             <dl>
-            <div class="mb-2">
+            <div class="mb-2 border p-2">
                 <dt><b> Sanskrit : </b></dt>
-                <dd><span id="chapter_verse_sanskrit"></span></dd>
+                <dd>
+                    <p  id="chapter_verse_sanskrit" class="text-justified"></p>
+                    <div class="text-end fst-italic" title="Author" id="chapter_verse_sanskrit_author"></div>
+                </dd>
+
             </div>
             
-            <div class="mb-2">
+            <div class="mb-2 border p-2">
                 <dt><b> Hindi : </b></dt>
-                <dd><span id="chapter_verse_hindi"></span></dd>
+                <dd>
+                    <p  id="chapter_verse_hindi" class="text-justified"></p>
+                    <div class="text-end fst-italic" title="Author" id="chapter_verse_hindi_author"></div>
+                    <!-- <figure>
+                        <blockquote class="blockquote">
+                          <p  id="chapter_verse_hindi"></p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer text-end">
+                          <cite title="Author" id="chapter_verse_hindi_author"></cite>
+                        </figcaption>
+                      </figure> -->
+                </dd>
             </div>
 
-            <div class="mb-2">
+            <div class="mb-2 border p-2">
                 <dt><b> English : </b></dt>
-                <dd><span id="chapter_verse_english"></span></dd>
+                <dd>
+                    <p  id="chapter_verse_english" class="text-justified"></p>
+                    <div class="text-end fst-italic" title="Author" id="chapter_verse_english_author"></div>
+                    <!--    -->
+                </dd>
             </div>
         </dl>
         </div>
@@ -66,4 +85,8 @@
 </div>
 
 <script type="module" src="../script/chapter.js">
+</script>
+
+<script>
+    console.log("Chapter Loaded")
 </script>

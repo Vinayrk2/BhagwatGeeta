@@ -11,9 +11,18 @@ const loadLink = ()=>{
       break;
 
     case "chapter":
+      console.log("Chapter Loaded")
       url = "res/chapter.html"
       break
 
+    case "contact":
+      url = "res/contact.html"
+      break
+    
+    case "about":
+      url = "res/about.html";
+      
+      break;
     
 
     default:
@@ -36,6 +45,8 @@ const loadLink = ()=>{
   })
   }
 }
+
+console.log("Controller Loaded")
 
 window.addEventListener("load",loadLink)
 

@@ -61,7 +61,10 @@ function setVerse(verse){
             "#chapter_verse_english_pro":response.transliteration,
             "#chapter_verse_hindi":hindi_desc.description,   
             "#chapter_verse_sanskrit":sanskrit_desc.description,
-            "#chapter_verse_english":english_desc.description.split("?").join("<br>")  
+            "#chapter_verse_english":english_desc.description.split("?").join("<br>"),
+            "#chapter_verse_sanskrit_author":" - "+sanskrit_desc.author_name,
+            "#chapter_verse_hindi_author":" -"+hindi_desc.author_name,
+            "#chapter_verse_english_author":" -"+english_desc.author_name
         }
         objectProcessor(obj)
     });
