@@ -1,0 +1,69 @@
+
+
+<div class="container-fluid row mt-0">
+    <div class="left-cointainer col-sm-4 col-12">
+
+        <table class="table table-bordered" id="chapter_details">
+            <tr>
+                <th colspan="2">
+                    <div class="text-center fw-bolder container-fluid bg-light mb-1" > <span id="chapter_chapter_no"></span> <span  id="chapter_chapter_name"></span></div>
+                </th>
+            </tr>
+            <tr>
+                <td colspan="2">        
+                <div class="d-flex justify-content-center">
+                    <img src="res/logo.jpg" alt="" width="60%" class="img img-thumbnail">        
+                </div></td>
+            </tr>
+            <tr>
+                <th>Name Translation : </th>
+                <td id="chapter_name_translated"></td>
+            </tr>
+            <tr>
+                <th>English Meaning : </th>
+                <td id="chapter_name_meaning"></td>
+            </tr>  
+            <tr>
+                <th>Verse Count : </th>
+                <td id="chapter_verse_count"></td>
+            </tr>  
+            <tr>
+                <th colspan="2" id="chapter_summary_hindi"></th>
+            </tr>          
+        </table>
+    </div>
+
+    <div class="right-container container-fluid border col-sm-8 col-12">
+        <div class="container-fluid">
+            <select name="verse" id="verse_dropdown" class="px-4">
+                
+            </select>
+        </div>
+        <p class="text-center fw-bold" id="chapter_verse_title"></p>
+        <div class="container-fluid text-center" id="chapter_verse_quote">
+
+        </div>
+        <div class="container-fluid text-justified m-4">[ <span id="chapter_verse_english_pro"> </span> ]</div>
+        <div class="container-fluid" >
+            <dl>
+            <div class="mb-2">
+                <dt><b> Sanskrit : </b></dt>
+                <dd><span id="chapter_verse_sanskrit"></span></dd>
+            </div>
+            
+            <div class="mb-2">
+                <dt><b> Hindi : </b></dt>
+                <dd><span id="chapter_verse_hindi"></span></dd>
+            </div>
+
+            <div class="mb-2">
+                <dt><b> English : </b></dt>
+                <dd><span id="chapter_verse_english"></span></dd>
+            </div>
+        </dl>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="../script/chapter.js">
+</script>

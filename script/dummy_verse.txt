@@ -1,0 +1,31 @@
+
+chapter_number
+: 
+1
+commentaries
+: 
+(16) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+id
+: 
+1
+slug
+: 
+"chapter-1-verse-1"
+text
+: 
+"धृतराष्ट्र उवाच\n\nधर्मक्षेत्रे कुरुक्षेत्रे समवेता युयुत्सवः।\n\nमामकाः पाण्डवाश्चैव किमकुर्वत सञ्जय।।1.1।।\n "
+translations
+: 
+(7) [{…}, {…}, {…}, {…}, {…}, {…}, {…}]
+transliteration
+: 
+"dhṛitarāśhtra uvācha\ndharma-kṣhetre kuru-kṣhetre samavetā yuyutsavaḥ\nmāmakāḥ pāṇḍavāśhchaiva kimakurvata sañjaya\n"
+verse_number
+: 
+1
+word_meanings
+: 
+"dhṛitarāśhtraḥ uvācha—Dhritarashtra said; dharma-kṣhetre—the land of dharma; kuru-kṣhetre—at Kurukshetra; samavetāḥ—having gathered; yuyutsavaḥ—desiring to fight; māmakāḥ—my sons; pāṇḍavāḥ—the sons of Pandu; cha—and; eva—certainly; kim—what; akurvata—did they do; sañjaya—Sanjay\n"
+[[Prototype]]
+: 
+Object

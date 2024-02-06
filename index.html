@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhagwat Geeta</title>
+    <link rel="shortcut icon" href="res/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  </head>
+
+<body>
+    <!-- Image and text -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="res/logo.jpg" width="30" height="30" class="d-inline-block align-text-top" alt="">
+          <span>Shreemad Bhagwat Geeta</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contribute</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+
+  <div class="container mt-5 ">
+    <ul class="list-unstyled row chapters_container"></ul>
+  </div>
+
+  <div id="mainContainer"></div>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    
+    <script type="module" src="script/controller.js"></script>
+    <script>
+      
+        const settings = {
+            async: true,
+            crossDomain: true,
+            url: 'https://bhagavad-gita3.p.rapidapi.com/v2/chapters/?limit=18',
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': '6e609ef5d2msh5bb3d2d9ef07dd2p1e4961jsne4d5757adcc7',
+                'X-RapidAPI-Host': 'bhagavad-gita3.p.rapidapi.com'
+            }
+        };
+
+
+
+        
+        
+        function generateDiv(obj,callBack){
+ 
+            $(".chapters_container").html(obj.map((val,i)=>{
+            return `
+        
+        <div class="card mb-3 mx-2" style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4 border">
+      <img src="res/logo.jpg" class="card-img" alt="...">
+      <p class="font-weight-bold text-center mt-1 d-flex justify-content-center align-items-center">${val.chapter_number} ${val.name}</p>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <p class="card-text">${val.chapter_summary_hindi.slice(0,val.chapter_summary_hindi.lastIndexOf(' ',130))} <a href="/?page=chapter&chapter=${val.chapter_number}" class="chapters" data-chapter-no="${val.chapter_number}">Read More</a></p>
+        <p class="card-text"><small class="text-muted">Last updated at 04/02/2024</small></p>
+      </div>
+    </div>
+  </div>
+</div>`
+
+        }))
+
+        callBack()
+    }
+
+    function addevent(){
+        // $("a").click(function(e){
+        //     e.preventDefault()
+        //     let chapter = this.dataset.chapterNo
+        //     console.log(this)
+        //     settings.url = `https://bhagavad-gita3.p.rapidapi.com/v2/chapters/${chapter}/`;
+
+        //     $.ajax(settings).done(function(res){
+        //       console.table(res)
+        //       $("#chapter_chapter_no").text(res.chapter_number + res.name)
+
+        //     })
+        // })
+    }
+
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+</html>
