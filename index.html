@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bhagwat Geeta</title>
     <link rel="shortcut icon" href="res/logo.webp" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
@@ -74,15 +74,15 @@
             $(".chapters_container").html(obj.map((val,i)=>{
             return `
         
-        <div class="card mb-3 mx-2 " style="max-width: 540px;">
+        <div class="card mb-3 mx-2 p-2" style="max-width: 540px; border-color:gray;">
   <div class="row no-gutters">
     <div class="col-md-4 border">
       <img src="res/logo.jpg" class="card-img" alt="...">
-      <p class="font-weight-bold text-center mt-1 d-flex justify-content-center align-items-center">${val.chapter_number} ${val.name}</p>
+      <p class="fw-bold text-center mt-1 d-flex justify-content-center align-items-center">${val.chapter_number} ${val.name}</p>
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <p class="card-text">${val.chapter_summary_hindi.slice(0,val.chapter_summary_hindi.lastIndexOf(' ',130))} <a href="/?page=chapter&chapter=${val.chapter_number}" class="chapters" data-chapter-no="${val.chapter_number}">Read More</a></p>
+        <p class="card-text">${val.chapter_summary_hindi.slice(0,val.chapter_summary_hindi.lastIndexOf(' ',150))}... <a href="/?page=chapter&chapter=${val.chapter_number}" class="chapters" data-chapter-no="${val.chapter_number}">Read More</a></p>
         <p class="card-text"><small class="text-muted">Last updated at 04/02/2024</small></p>
       </div>
     </div>
