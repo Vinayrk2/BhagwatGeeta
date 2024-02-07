@@ -1,3 +1,5 @@
+
+
 const loadLink = ()=>{
   if(window.location.search)
   {
@@ -45,8 +47,6 @@ const loadLink = ()=>{
   })
   }
 }
-
-console.log("Controller Loaded")
 
 window.addEventListener("load",loadLink)
 

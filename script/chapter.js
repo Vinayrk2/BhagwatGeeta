@@ -7,6 +7,7 @@ let chapter = urlSearch.get("chapter") == undefined ? 1 : urlSearch.get("chapter
 
 if(!isNaN(chapter) && chapter > 0 && chapter <= 18){
     settings.url = `https://bhagavad-gita3.p.rapidapi.com/v2/chapters/${chapter}/`
+    
     $.ajax(settings).done(function (response) {
 
         let obj = {
@@ -38,6 +39,7 @@ $("#verse_dropdown").change(function(e){
 
 function setVerse(verse){
     settings.url = `https://bhagavad-gita3.p.rapidapi.com/v2/chapters/${chapter}/verses/${verse}/`
+    $("#loading").show("slow")
     $.ajax(settings).done(function (response) {
 
         let hindi_desc = response.commentaries.find((val,index)=>{
@@ -66,7 +68,9 @@ function setVerse(verse){
             "#chapter_verse_hindi_author":" -"+hindi_desc.author_name,
             "#chapter_verse_english_author":" -"+english_desc.author_name
         }
+
         objectProcessor(obj)
+        $("#loading").hide("slow")
     });
 }
 
