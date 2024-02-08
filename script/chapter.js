@@ -18,6 +18,7 @@ if(!isNaN(chapter) && chapter > 0 && chapter <= 18){
             "#chapter_verse_count" : response.verses_count,
             "#chapter_summary_hindi":response.chapter_summary_hindi
         }
+        $("#chapter_img").attr("src",`res/images/${response.chapter_number}.jpg`)
         objectProcessor(obj)
         let str = ""
         for(let i = 1; i<=response.verses_count; i++){
