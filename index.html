@@ -16,6 +16,7 @@
     <style>
       html {
         height: 100%;
+        zoom: 90%;
       }
       
       
@@ -168,7 +169,7 @@
           $(".chapters_container").html(obj.map((val,i)=>{
             return `
           
-        <div class="card mb-5 mx-5 p-2 col-sm-6" style="max-width: 540px; border-color:gray;" title="${val.name}" onclick="redirectPage('/?page=chapter&chapter=${val.chapter_number}')">
+        <div class="card mb-4 col-11 mx-4 p-2 col-sm-5" style="max-width: 540px; border-color:gray;" title="${val.name}" onclick="redirectPage('/?page=chapter&chapter=${val.chapter_number}')">
   <div class="row no-gutters">
     <div class="col-md-4 border">
       <img src="res/images/${val.chapter_number}.jpg" class="card-img" alt="...">
