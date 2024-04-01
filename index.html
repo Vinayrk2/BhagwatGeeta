@@ -10,6 +10,94 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script type="module" src="script/controller.js"></script>
     <script src="https://kit.fontawesome.com/719270a6fc.js" crossorigin="anonymous"></script>
+    <!-- body {
+      background-image: radial-gradient(circle farthest-corner at center, #3C4B57 0%, #1C262B 100%);
+    } -->
+    <style>
+      html {
+        height: 100%;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      }
+      
+      
+      .loader {
+        position: absolute;
+        top: calc(50% - 32px);
+        left: calc(50% - 32px);
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        perspective: 800px;
+      }
+      
+      .inner {
+        position: absolute;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;  
+      }
+      
+      .inner.one {
+        left: 0%;
+        top: 0%;
+        animation: rotate-one 1s linear infinite;
+        border-bottom: 7px solid #ebac23;
+      }
+      
+      .inner.two {
+        right: 0%;
+        top: 0%;
+        animation: rotate-two 1s linear infinite;
+        border-right: 7px solid #e4fa1c;
+      }
+      
+      .inner.three {
+        right: 0%;
+        bottom: 0%;
+        animation: rotate-three 1s linear infinite;
+        border-top: 7px solid #1010ee;
+      }
+      
+      @keyframes rotate-one {
+        0% {
+          transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+        }
+        100% {
+          transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+        }
+      }
+      
+      @keyframes rotate-two {
+        0% {
+          transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+        }
+        100% {
+          transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+        }
+      }
+      
+      @keyframes rotate-three {
+        0% {
+          transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+        }
+        100% {
+          transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+        }
+      }
+
+      .card{
+        transition: all 0.3s;
+      }
+
+      .card:hover{
+        transform: scale(1.1,1.1);
+        box-shadow: 3px 7px 10px 1px rgba(0,0,0,0.49);
+        -webkit-box-shadow: 3px 7px 10px 1px rgba(0,0,0,0.49);
+        -moz-box-shadow: 3px 7px 10px 1px rgba(0,0,0,0.49);
+        cursor: pointer;
+      }
+    </style>
   </head>
 
 <body>
@@ -19,7 +107,7 @@
       <div class="container-fluid">
         <a class="navbar-brand" href="/">
           <img src="res/logo.webp" width="30" height="30" class="d-inline-block align-text-top" alt="">
-          <span>Shreemad Bhagavad Gita</span>
+          <span class="fw-bolder">Shreemad Bhagavad Gita</span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -47,11 +135,11 @@
   </div> -->
 
   <div id="mainContainer" class="container mt-5">
-    <div id="loading" style="width:100%; display:block;">
-      <div class="spinner-border d-block m-auto" role="status">
-      </div>
-      <div class=" text-center fw-bold">Loading...</div>
-      </div>
+    <div class="loader">
+      <div class="inner one"></div>
+      <div class="inner two"></div>
+      <div class="inner three"></div>
+    </div>
   </div>
 
 
@@ -77,27 +165,32 @@
         
         
         function generateDiv(obj,callBack){ 
-            $("#mainContainer").html(`<ul class="list-unstyled row chapters_container justify-content-center"></ul>`);
-            $(".chapters_container").html(obj.map((val,i)=>{
+          $("#mainContainer").html(`<ul class="list-unstyled row chapters_container justify-content-center"></ul>`);
+          $(".chapters_container").html(obj.map((val,i)=>{
             return `
-        
-        <div class="card mb-3 mx-2 p-2 col-11 col-sm-6" style="max-width: 540px; border-color:gray;">
+          
+        <div class="card mb-5 mx-5 p-2 col-11 col-sm-6" style="max-width: 540px; border-color:gray;" title="${val.name}" onclick="redirectPage('/?page=chapter&chapter=${val.chapter_number}')">
   <div class="row no-gutters">
     <div class="col-md-4 border">
-      <img src="res/logo.jpg" class="card-img" alt="...">
+      <img src="res/images/${val.chapter_number}.jpg" class="card-img" alt="...">
       <p class="fw-bold text-center mt-1 d-flex justify-content-center align-items-center">${val.chapter_number} ${val.name}</p>
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <p class="card-text">${val.chapter_summary_hindi.slice(0,val.chapter_summary_hindi.lastIndexOf(' ',150))}... <a href="/?page=chapter&chapter=${val.chapter_number}" class="chapters" data-chapter-no="${val.chapter_number}">Read More</a></p>
-        <p class="card-text"><small class="text-muted">Last updated at 04/02/2024</small></p>
+        <p class="card-text">${val.chapter_summary_hindi.slice(0,val.chapter_summary_hindi.lastIndexOf(' ',200))}... <a href="/?page=chapter&chapter=${val.chapter_number}" class="chapters" data-chapter-no="${val.chapter_number}">Read More</a></p>
+        <p class="card-text"><small class="text-muted position-absolute bottom-0 mb-3">Last updated at 04/02/2024</small></p>
       </div>
     </div>
   </div>
-</div>`
+</div>
+`
 
         }))
         callBack()
+      }
+      
+    function redirectPage(url){
+      window.location.assign(url)
     }
 
     function addevent(){

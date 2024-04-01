@@ -1,7 +1,11 @@
 
 
-
-<div class=" row mt-0">
+<div class="container-fluid d-flex w-100 justify-content-end mb-2">
+    <em>Select Verse: </em><select name="verse" id="verse_dropdown" class="px-4 mx-2 border bg-light" title="Select verse">
+        
+    </select>
+</div>
+<div class=" row mt-0 ">
     <div class="left-cointainer col-sm-4 col-12">
 
         <table class="table table-bordered" id="chapter_details">
@@ -34,7 +38,7 @@
         </table>
     </div>
 
-    <div class="right-container container-fluid border col-sm-8 col-12">
+    <div class="right-container container-fluid border col-sm-8 col-12 p-2">
         <div id="loading" style="width:100%; display:block;">
             <div class="spinner-border d-block m-auto" role="status">
             </div>
@@ -42,12 +46,9 @@
             </div>
 
             
-        <div class="container-fluid d-flex w-100 justify-content-end mb-2">
-            <em>Select Verse: </em><select name="verse" id="verse_dropdown" class="px-4 mx-2 border" title="Select verse">
-                
-            </select>
-        </div>
-        <u><p class="text-center fw-bold" id="chapter_verse_title"></p></u>
+        
+        <u><p class="text-center fw-bold bg-primary p-2 text-white" style="text-transform: capitalize;" id="chapter_verse_title"></p></u>
+
         <div class="container-fluid text-center fw-bold" id="chapter_verse_quote">
 
         </div>
@@ -55,7 +56,7 @@
         <div class="container-fluid chapter_des" >
             <dl>
             <div class="mb-2 border p-2">
-                <dt><b> Sanskrit : </b></dt>
+                <dt class="mb-2"><b> Sanskrit : </b></dt>
                 <dd>
                     <p  id="chapter_verse_sanskrit" class="text-justified"></p>
                     <div class="text-end fst-italic" title="Author" id="chapter_verse_sanskrit_author"></div>
@@ -64,7 +65,7 @@
             </div>
             
             <div class="mb-2 border p-2">
-                <dt><b> Hindi : </b></dt>
+                <dt class="mb-2"><b> Hindi : </b></dt>
                 <dd>
                     <p  id="chapter_verse_hindi" class="text-justified"></p>
                     <div class="text-end fst-italic" title="Author" id="chapter_verse_hindi_author"></div>
@@ -80,7 +81,7 @@
             </div>
 
             <div class="mb-2 border p-2">
-                <dt><b> English : </b></dt>
+                <dt class="mb-2"><b> English : </b></dt>
                 <dd>
                     <p  id="chapter_verse_english" class="text-justified"></p>
                     <div class="text-end fst-italic" title="Author" id="chapter_verse_english_author"></div>
